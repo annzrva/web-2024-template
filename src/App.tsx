@@ -4,16 +4,7 @@ import styled from "styled-components";
 import {
   Typography,
   TextField,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction,
-  IconButton,
-  Checkbox,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 
 interface Recipe {
   id: number;
@@ -60,7 +51,6 @@ function App() {
   const [recipes, setRecipes] = useLocalStorageState<Recipe[]>("recipes", {
     defaultValue: [],
   });
-  const [editingId, setEditingId] = useState<number | null>(null);
   const [servingsMultiplier, setServingsMultiplier] = useState<{ [key: number]: number }>({});
 
   useEffect(() => {
